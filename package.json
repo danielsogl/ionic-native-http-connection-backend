@@ -16,18 +16,15 @@
     "type": "git",
     "url": "https://github.com/sneas/ionic-native-http-connection-backend.git"
   },
-  "keywords": [
-    "ionic",
-    "ionic3",
-    "wk-web-view",
-    "cors"
-  ],
+  "keywords": ["ionic", "ionic3", "wk-web-view", "cors"],
   "author": "Dima Snisarenko",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sneas/ionic-native-http-connection-backend/issues"
+    "url":
+      "https://github.com/sneas/ionic-native-http-connection-backend/issues"
   },
-  "homepage": "https://github.com/sneas/ionic-native-http-connection-backend#readme",
+  "homepage":
+    "https://github.com/sneas/ionic-native-http-connection-backend#readme",
   "devDependencies": {
     "@angular/common": "^5.2.9",
     "@angular/compiler": "^5.2.9",
@@ -68,22 +65,14 @@
       "^.+\\.(ts|js|html)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "js",
-      "html",
-      "json"
-    ],
-    "mapCoverage": true,
+    "moduleFileExtensions": ["ts", "js", "html", "json"],
     "globals": {
       "ts-jest": {
         "tsConfigFile": "tsconfig.test.json"
       }
     },
     "setupTestFrameworkScriptFile": "<rootDir>/jest.init.ts",
-    "transformIgnorePatterns": [
-      "node_modules/(?!@ionic-native)"
-    ]
+    "transformIgnorePatterns": ["node_modules/(?!@ionic-native)"]
   },
   "lint-staged": {
     "src/**/*.ts": [
