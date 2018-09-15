@@ -1,7 +1,7 @@
 {
   "name": "ionic-native-http-connection-backend",
-  "version": "0.0.0-development",
-  "description": "A solution to CORS problem with Ionic 3 and WKWebView",
+  "version": "4.0.7",
+  "description": "A solution to CORS problem with Ionic and WKWebView",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -26,31 +26,32 @@
   "homepage":
     "https://github.com/sneas/ionic-native-http-connection-backend#readme",
   "devDependencies": {
-    "@angular/common": "^5.2.9",
-    "@angular/compiler": "^5.2.9",
-    "@angular/compiler-cli": "^5.2.9",
-    "@angular/core": "^5.2.9",
-    "@angular/forms": "^5.2.9",
-    "@angular/http": "^5.2.9",
-    "@angular/platform-browser": "^5.2.9",
-    "@ionic-native/core": "^4.6.0",
-    "@ionic-native/http": "^4.6.0",
-    "@types/jest": "^22.2.2",
+    "@angular/common": "^5.2.10",
+    "@angular/compiler": "^5.2.10",
+    "@angular/compiler-cli": "^5.2.10",
+    "@angular/core": "^5.2.10",
+    "@angular/forms": "^5.2.10",
+    "@angular/http": "^5.2.10",
+    "@angular/platform-browser": "^5.2.10",
+    "@ionic-native/core": "^4.7.0",
+    "@ionic-native/http": "^4.7.0",
+    "@semantic-release/git": "5.0.0",
+    "@types/jest": "^22.2.3",
     "commitizen": "^2.9.6",
-    "core-js": "^2.5.3",
+    "core-js": "^2.5.5",
     "cz-conventional-changelog": "^2.1.0",
     "husky": "0.14.3",
     "ionic-angular": "^3.9.2",
     "jest": "^22.4.3",
-    "lint-staged": "^7.0.0",
-    "prettier": "1.11.1",
+    "lint-staged": "^7.0.4",
+    "prettier": "^1.12.1",
     "rimraf": "^2.6.2",
-    "rxjs": "^5.5.7",
-    "semantic-release": "^15.1.4",
-    "travis-deploy-once": "^4.4.1",
-    "ts-jest": "^22.4.2",
-    "typescript": "^2.7.2",
-    "zone.js": "^0.8.20"
+    "rxjs": "^5.5.10",
+    "semantic-release": "^15.8.1",
+    "travis-deploy-once": "^5.0.1",
+    "ts-jest": "^22.4.4",
+    "typescript": "~2.7.2",
+    "zone.js": "^0.8.26"
   },
   "peerDependencies": {
     "@ionic-native/http": "^4.4.2"
@@ -65,7 +66,12 @@
       "^.+\\.(ts|js|html)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$",
-    "moduleFileExtensions": ["ts", "js", "html", "json"],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "html",
+      "json"
+    ],
     "globals": {
       "ts-jest": {
         "tsConfigFile": "tsconfig.test.json"
@@ -78,6 +84,19 @@
     "src/**/*.ts": [
       "prettier --single-quote --trailing-comma all --tab-width 4 --write",
       "git add"
+    ]
+  },
+  "release": {
+    "prepare": [
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json",
+          "package-lock.json"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
     ]
   }
 }

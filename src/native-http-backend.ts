@@ -41,7 +41,7 @@ export class NativeHttpBackend implements HttpBackend {
             'HEAD',
         ];
 
-        if (!allowedRequestMethods.includes(req.method.toUpperCase())) {
+        if (allowedRequestMethods.indexOf(req.method.toUpperCase()) === -1) {
             throw 'Only GET, POST, PUT, DELETE, PATCH and HEAD methods are supported by the current Native HTTP version';
         }
 
@@ -164,7 +164,8 @@ export class NativeHttpBackend implements HttpBackend {
     ): DataSerializerType {
         if (
             req.method.toLowerCase() === 'post' ||
-            req.method.toLowerCase() === 'put'
+            req.method.toLowerCase() === 'put' ||
+            req.method.toLowerCase() === 'patch'
         ) {
             // 1 stands for ContentType.JSON. Angular doesn't export ContentType
             if (typeof req.body !== 'string') {
